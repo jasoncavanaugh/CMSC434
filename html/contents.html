@@ -2,53 +2,91 @@
 
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kitchen Kompanion</title>
     <link rel="stylesheet" type="text/css" href="../css/contents.css" />
   </head>
-
   <body>
-    <header>
-      <h1>Kitchen Contents</h1>
-      <form id="form">
-       <input type="text" name="input" id="input" placeholder="What's in your kitchen?" />
-        <input type="submit" id="submit" value="Add item" />
-      </form>
-    </header>
-
-    <main>
-      <section class="contents">
-        <h2>Expiring Soon!</h2>
-        <div id="items">
+    <div class="phone-wrapper">
+      <div class="battery-and-shit"></div>
+      <div class="add-item-modal">
+        <div style="position: relative">
+          <i class="close-modal-btn" onclick="toggleAddItemModal()">&#120;</i>
+          <form class="new-item-form">
+            <div class="options-wrapper">
+              <input
+                name="new-item-name"
+                type="text"
+                id="new-item-name"
+                class="new-item-form-field"
+                placeholder="What's in your kitchen?"
+              />
+              <div class="food-group-dropdown-wrapper">
+                <label for="food-groups-dropdown">Choose a food group</label>
+                <select
+                  id="food-groups-dropdown"
+                  name="food-groups-dropdown"
+                  class="new-item-form-field"
+                >
+                  <option value="dairy">Dairy</option>
+                  <option value="fruits">Fruits</option>
+                  <option value="grains">Grains</option>
+                  <option value="protein">Protein</option>
+                  <option value="veggies">Veggies</option>
+                </select>
+              </div>
+              <input
+                name="expiration-date"
+                type="date"
+                id="expiration-date"
+                class="new-item-form-field"
+              />
+            </div>
+            <input class="add-item-btn" type="submit" value="Add item" />
+          </form>
         </div>
-      </section>
+      </div>
+      <header class="main-header">
+        <img class="back" src="../assets/left.png" alt="back" />
+        <h1>Kitchen Contents</h1>
+      </header>
 
-      <section class="contents">
-        <h2>Pantry</h2>
-        <div id="items">
-        </div>
-      </section>
+      <main class="main-contents">
+        <section class="food-group">
+          <h2>Expiring Soon!</h2>
+          <ul class="food-items-list"></ul>
+        </section>
 
-      <section class="contents">
-        <h2>Dairy</h2>
-        <div id="items">
-        </div>
-      </section>
+        <section class="food-group">
+          <h2>Dairy</h2>
+          <ul class="food-items-list"></ul>
+        </section>
 
-      <section class="contents">
-        <h2>Fruits</h2>
-        <div id="items">
-        </div>
-      </section>
+        <section class="food-group">
+          <h2>Fruits</h2>
+          <ul class="food-items-list"></ul>
+        </section>
 
-      <section class="contents">
-        <h2>Protein</h2>
-        <div id="items">
-        </div>
-      </section>
-    </main>
+        <section class="food-group">
+          <h2>Grains</h2>
+          <ul class="food-items-list"></ul>
+        </section>
 
-      <script src="../js/contents.js"></script>
+        <section class="food-group">
+          <h2>Protein</h2>
+          <ul class="food-items-list"></ul>
+        </section>
+
+        <section class="food-group">
+          <h2>Veggies</h2>
+          <ul class="food-items-list"></ul>
+        </section>
+      </main>
+      <nav class="navbar">
+        <button class="new-item-btn" onclick="toggleAddItemModal()">+</button>
+      </nav>
+    </div>
+    <script src="../js/contents.js"></script>
   </body>
 </html>
