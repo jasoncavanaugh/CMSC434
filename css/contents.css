@@ -202,6 +202,11 @@ body {
   margin-bottom: 1rem;
 }
 
+.food-item {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* #items .item {
   display: flex;
   justify-content: space-between;
