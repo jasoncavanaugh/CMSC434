@@ -1,0 +1,349 @@
+html {
+    background-color: lightgray;
+}
+
+.smartphone {
+    position: relative;
+    width: 428px;
+    height: 926px;
+    margin: auto;
+    border: 20px black solid;
+    border-top-width: 70px;
+    border-bottom-width: 70px;
+    border-radius: 36px;
+}
+  
+.smartphone:before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 5px;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333;
+    border-radius: 10px;
+}
+
+.smartphone:after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    bottom: -85px;
+    transform: translate(-50%, -50%);
+    background: rgb(71, 71, 71);
+    border-radius: 50%;
+}
+
+.smartphone .content {
+    width: 428px;
+    height: 926px;
+    background-color: white;
+    overflow-y: scroll;
+    font-family: "Poppins", sans-serif;
+}
+
+.smartphone #profile {
+    background-color: #52BF90;
+    width: 45px;
+    height: 45px;
+    left: 378px;
+    top: 70px;
+    position: relative;
+    border-radius: 5px;
+    margin-bottom: .1px;
+}
+
+.smartphone #profile-pic {
+    width: 39px;
+    height: 37px;
+    right: 3px;
+    top: 115px;
+    position: absolute;
+    z-index: 100;
+}
+
+.smartphone h1 {
+    text-align: center;
+    font-weight: 700;
+    margin-top: 120px;
+}
+
+.smartphone h3 {
+    font-size: 18px;
+    color: #AEAEAE;
+    font-weight: 400;
+    margin-left: 25px;
+    margin-top: 16px;
+}
+
+.smartphone img {
+    width: 30px;
+    height: 30px;
+    vertical-align: 60%;
+    margin-top: -110px;
+    margin-left: 375px;
+}
+
+.smartphone #create {
+    color: #FFFFFF;
+    background-color: #A953DD;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 13px 20px;
+    gap: 10px;
+    position: absolute;
+    width: 364px;
+    height: 59px;
+    border-radius: 10px;
+    border-style: none;
+    left: 32px;
+    top: 793px;
+    font-weight: 600;
+}
+
+.smartphone #create:hover {
+    background-color: #8734C3;
+}
+
+.smartphone #home {
+    position: absolute;
+    width: 27px;
+    height: 27px;
+    align-items: center;
+    left: -175px;
+    bottom: 27px;
+
+}
+
+.smartphone #kitchen {
+    position: absolute;
+    align-items: center;
+    left: -345px;
+    bottom: 25px;
+}
+
+.smartphone #cookbook {
+    position: absolute;
+    align-items: center;
+    left: -265px;
+    bottom: 25px;
+}
+
+.smartphone #list {
+    position: absolute;
+    align-items: center;
+    left: -85px;
+    bottom: 25px;
+}
+
+.smartphone #user {
+    position: absolute;
+    align-items: center;
+    left: -5px;
+    bottom: 25px;
+}
+.smartphone div #breakfast {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    left: 28px;
+    top: 5px;
+    background: #F5EFBB;
+    border-radius: 10px;
+}
+
+.smartphone div #breakfast h1 {
+    font-size: 48px;
+    position: absolute;
+    top: -115px;
+    left: 15px;
+}
+
+.smartphone .breakfast-description {
+    margin-left: 35px;
+    vertical-align: 160%;
+    font-size: 22px;
+}
+
+.smartphone div #breakfast-time {
+    vertical-align: 100%;
+    margin-left: 235px;
+    font-size: 16px;
+    margin-top: -79px;
+    color: #AEAEAE;
+}
+
+.smartphone div #breakfast-products {
+    vertical-align: 100%;
+    margin-left: 120px;
+    font-size: 16px;
+    margin-top: 5px;
+    color: #AEAEAE;
+}
+
+.smartphone div #taco-night {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    left: 28px;
+    top: 55px;
+    background: #F3BBF5;
+    border-radius: 10px;
+}
+
+.smartphone div #taco-night h1 {
+    font-size: 48px;
+    position: absolute;
+    top: -115px;
+    left: 15px;
+}
+
+.smartphone .taco-description {
+    margin-left: 35px;
+    font-size: 22px;
+}
+
+.smartphone div #taco-time {
+    vertical-align: 100%;
+    margin-left: 248px;
+    font-size: 16px;
+    margin-top: -28px;
+    color: #AEAEAE;
+}
+
+.smartphone div #taco-products {
+    vertical-align: 100%;
+    margin-left: 120px;
+    font-size: 16px;
+    margin-top: 5px;
+    color: #AEAEAE;
+}
+
+.smartphone div #halloween {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    left: 28px;
+    top: 55px;
+    background: #F5BBC8;
+    border-radius: 10px;
+}
+
+.smartphone div #halloween h1 {
+    font-size: 48px;
+    position: absolute;
+    top: -115px;
+    left: 15px;
+}
+
+.smartphone .halloween-description {
+    margin-left: 35px;
+    font-size: 22px;
+}
+
+.smartphone div #halloween-time {
+    vertical-align: 100%;
+    margin-left: 248px;
+    font-size: 16px;
+    margin-top: -28px;
+    color: #AEAEAE;
+}
+
+.smartphone div #halloween-products {
+    vertical-align: 100%;
+    margin-left: 120px;
+    font-size: 16px;
+    margin-top: 5px;
+    color: #AEAEAE;
+}
+
+.smartphone .form-popup {
+    display: none;
+    position: fixed;
+    border: 2px solid #AEAEAE;
+    border-radius: 10px;
+    left: 936px;
+    top: 500px;
+    z-index: 9;
+}
+
+.smartphone .form-container {
+   background-color: #FFFFFF;
+   width: 300px;
+   height: 226px;
+   box-sizing: border-box;
+}
+
+.smartphone .form-container input[type=text] {
+    position: absolute;
+    width: 216px;
+    height: 38.74px;
+    background: #F8F8F8;
+    border: 1px solid #AEAEAE;
+    border-radius: 10px;
+}
+
+.smartphone .form-container #list-name {
+    left: 45px;
+    top: 30px;
+    font-family: "Poppins", sans-serif;
+    font-style: italic;
+    font-weight: 275;
+    font-size: 12px;
+}
+
+.smartphone .form-container #list-icon {
+    left: 45px;
+    top: 90px;
+    font-family: "Poppins", sans-serif;
+    font-style: italic;
+    font-weight: 275;
+    font-size: 12px;
+}
+
+.smartphone .form-container .submit {
+    cursor: pointer;
+    position: absolute;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    width: 136px;
+    height: 46.28px;
+    left: 80px;
+    top: 160px;
+    background-color: #A953DD;
+    border-radius: 10px;
+    border: none;
+    color: #FFFFFF;
+}
+
+.smartphone .form-container .submit:hover {
+    background-color: #8734C3;
+}
+
+.smartphone .close::before {
+    content: '\d7';
+    font-size: 28px;
+    color: #AEAEAE;
+    position: absolute;
+    left: 275px;
+    cursor: pointer;
+}
+
+.smartphone .close:hover {
+    color: #EEEEEE;
+}

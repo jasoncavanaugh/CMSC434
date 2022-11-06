@@ -1,0 +1,285 @@
+html {
+    background-color: lightgray;
+}
+
+.smartphone {
+    position: relative;
+    width: 428px;
+    height: 926px;
+    margin: auto;
+    border: 20px black solid;
+    border-top-width: 70px;
+    border-bottom-width: 70px;
+    border-radius: 36px;
+}
+  
+.smartphone:before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 5px;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333;
+    border-radius: 10px;
+}
+
+.smartphone:after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    bottom: -85px;
+    transform: translate(-50%, -50%);
+    background: rgb(71, 71, 71);
+    border-radius: 50%;
+}
+
+.smartphone .content {
+    width: 428px;
+    height: 926px;
+    background-color: white;
+    overflow-y: scroll;
+    font-family: "Poppins", sans-serif;
+}
+
+.smartphone .box {
+    border: none;
+    overflow-y: scroll;
+    height: 830px;
+}
+
+.smartphone #back {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    top: 175px;
+
+}
+
+.smartphone #profile {
+    background-color: #52BF90;
+    width: 45px;
+    height: 45px;
+    left: 378px;
+    top: 25px;
+    position: relative;
+    border-radius: 5px;
+    margin-bottom: .1px;
+}
+
+.smartphone #profile-pic {
+    width: 39px;
+    height: 37px;
+    right: 3px;
+    top: 5px;
+    position: absolute;
+    z-index: 100;
+}
+
+.smartphone h1 {
+    text-align: center;
+    font-weight: 700;
+    margin-top: 80px;
+}
+
+.smartphone h3 {
+    font-size: 20px;
+    color: #AEAEAE;
+    font-weight: 400;
+    margin-left: 25px;
+}
+
+.smartphone ul {
+    list-style: none;
+    padding-left: 30px;
+    margin-top: -15px;
+}
+
+.smartphone li {
+    list-style-type: none;
+    position: relative;
+    font-size: 22px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.smartphone li::content {
+    padding-left: 400px;
+}
+
+.smartphone li::before {
+    display: inline-block;
+    position: relative;
+    width: 39px;
+    height: 41px;
+    background-color: #EEEEEE;
+    content: ' ';
+    border-radius: 50%;
+    font-weight: 400;
+    margin-left: 20px;
+    margin-bottom: 12px;
+    left: -10px;
+}
+
+.smartphone .close {
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    color: #AEAEAE;
+}
+
+.smartphone .close::after {
+    content: '\d7';
+    font-size: 35px;
+}
+
+.smartphone .close:hover {
+    color: #EEEEEE; 
+}
+
+.smartphone li.checked {
+    color: #AEAEAE;
+    text-decoration: line-through;
+}
+
+.smartphone li.checked::before {
+    background-color: #77AAFF;
+}
+
+.smartphone li.checked::after {
+    content: '';
+    color: #5588FF;
+    position: absolute;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 7px;
+    left: 24px;
+    transform: rotate(46deg);
+    height: 20px;
+    width: 10px;
+}
+
+.smartphone #microphone {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 855px;
+    left: 80px;
+}
+
+.smartphone #add-button {
+    color: #FFFFFF;
+    background-color: #A953DD;
+    position: fixed;
+    display: inline-block;
+    left: 1040px;
+    top: 905px;
+    text-align: center;
+    border-radius: 30px;
+    border-style: none;
+    width: 85px;
+    height: 85px;
+    cursor: pointer;
+}
+
+.smartphone #add-button:hover {
+    background-color: #8734C3;
+}
+
+.smartphone .form-popup {
+    display: none;
+    position: fixed;
+    border: 2px solid #AEAEAE;
+    border-radius: 10px;
+    left: 936px;
+    top: 500px;
+    z-index: 9;
+}
+
+.smartphone .form-container {
+   background-color: #FFFFFF;
+   width: 300px;
+   height: 226px;
+   box-sizing: border-box;
+}
+
+.smartphone .form-container input[type=text] {
+    position: absolute;
+    width: 216px;
+    height: 38.74px;
+    background: #F8F8F8;
+    border: 1px solid #AEAEAE;
+    border-radius: 10px;
+}
+
+.smartphone .form-container #food-name {
+    left: 45px;
+    top: 30px;
+    font-family: "Poppins", sans-serif;
+    font-style: italic;
+    font-weight: 275;
+    font-size: 12px;
+}
+
+.smartphone .form-container #food-group {
+    left: 47px;
+    top: 90px;
+    font-family: "Poppins", sans-serif;
+    font-style: italic;
+    font-weight: 275;
+    font-size: 12px;
+    color: #5A5A5A;
+    position: absolute;
+    width: 220px;
+    height: 38.74px;
+    background: #F8F8F8;
+    border: 1px solid #AEAEAE;
+    border-radius: 10px;
+}
+
+.smartphone .form-container .submit {
+    cursor: pointer;
+    position: absolute;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    width: 136px;
+    height: 46.28px;
+    left: 80px;
+    top: 160px;
+    background-color: #A953DD;
+    border-radius: 10px;
+    border: none;
+    color: #FFFFFF;
+}
+
+.smartphone .form-container .submit:hover {
+    background-color: #8734C3;
+}
+
+.smartphone .form-container .close {
+    position: absolute;
+    left: 275px;
+    top: 2px;
+    color: #AEAEAE;
+    cursor: pointer;
+}
+
+.smartphone .form-container .close::after {
+    content: '\d7';
+    font-size: 30px;
+}
+
+.smartphone .form-container .close:hover {
+    color: #EEEEEE;
+}
+
