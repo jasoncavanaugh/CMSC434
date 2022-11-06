@@ -72,6 +72,7 @@ function addItem(name, type, expiration) {
   itemList.push({
     name,
     expiration: expiration.toISOString().substring(0, 10),
+    type: type,
   });
 
   displayFoodItems(idOfListToRerender, itemList);
@@ -83,7 +84,7 @@ const displayFoodItems = (lstId) => {
   console.log(lstIdToItemList);
   console.log(itemList);
 
-  itemList.sort((a, b) => (a.name < b.name ? -1 : 1));
+  // itemList.sort((a, b) => (a.name < b.name ? -1 : 1));
 
   domList.innerHTML = itemList
     .map((item, idx) => {
@@ -123,7 +124,7 @@ const onClickEditItem = (lstId, index) => {
   const item = lstIdToItemList[lstId][index];
   toggleEditItemModal();
   document.getElementById("edit-item-name").value = item.name;
-  const type = lstId.substring(0, lstId.length - 4);
+  const type = item.type;
   document.getElementById("edit-food-groups-dropdown").value = type; // const expiration = getExpirationDate(
   document.getElementById("edit-expiration-date").value = item.expiration;
 
@@ -141,6 +142,7 @@ const onClickEditItem = (lstId, index) => {
       name !== item.name ||
       expiration.toISOString().substring(0, 10) !== item.expiration
     ) {
+      let switchLists = false;
       if (
         lstId !== newListId ||
         (dateDiffInDays(new Date(), expiration) <= 1 &&
@@ -148,22 +150,33 @@ const onClickEditItem = (lstId, index) => {
         (dateDiffInDays(new Date(), expiration) >= 1 &&
           dateDiffInDays(new Date(), new Date(item.expiration)) < 1)
       ) {
+        console.log("Here");
         lstIdToItemList[lstId].splice(index, 1);
+        switchLists = true;
         displayFoodItems(lstId);
       }
-      editItem(newListId, name, expiration, index);
+      editItem(newListId, name, expiration, index, switchLists, type);
     }
     toggleEditItemModal();
   };
 };
 
-const editItem = (newListId, name, expiration, index) => {
+const editItem = (newListId, name, expiration, index, switchLists, type) => {
   const now = new Date();
   const diff = dateDiffInDays(now, expiration);
   let idOfListToRerender = diff <= 1 ? "expiring-lst" : newListId;
-  lstIdToItemList[idOfListToRerender][index] = {
-    name,
-    expiration: expiration.toISOString().substring(0, 10),
-  };
+  if (switchLists) {
+    lstIdToItemList[idOfListToRerender].push({
+      name,
+      expiration: expiration.toISOString().substring(0, 10),
+      type: type,
+    });
+  } else {
+    lstIdToItemList[idOfListToRerender][index] = {
+      name,
+      expiration: expiration.toISOString().substring(0, 10),
+      type: type,
+    };
+  }
   displayFoodItems(idOfListToRerender);
 };
