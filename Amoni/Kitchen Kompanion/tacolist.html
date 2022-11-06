@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="tacolist.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+    <script src="list.js" defer></script>
+    <title>Taco Night List</title>
+</head>
+
+<body>
+    <div class="smartphone">
+        <div class="content">
+            <div class="box">
+                <div> <a href="shoppinglist.html"> <img src="icons/backward.png" alt="goback" id="back"></a></div>
+                <div id="profile"> <img src="icons/user.png" alt="profile" id="profile-pic"></div>
+                <h1><strong>Taco Night</strong></h1>
+
+                <div>
+                    <h3>Veggies</h3>
+                    <ul id="veggies">
+                        <li>Avocado<span class="close"></span></li>
+                        <li class="checked">Green Peppers<span class="close"></span></li>
+                    </ul>
+                </div>
+                    
+                <div>
+                    <h3>Dairy</h3>
+                    <ul id="dairy">
+                        <li>Milk<span class="close"></span></li>
+                        <li class="checked">Cheddar Cheese<span class="close"></span></li>
+                        <li class="checked">Eggs<span class="close"></span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Fruits</h3>
+                    <ul id="fruits">
+                        <li>Mango<span class="close"></span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Proteins</h3>
+                    <ul id="proteins">
+                        <li>Chicken<span class="close"></span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Grains</h3>
+                    <ul id="grains">
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Drinks</h3>
+                    <ul id="drinks">
+                    </ul>
+                </div>
+            </div>
+            <button class="add" id="add-button" onclick="add()"><img src="icons/add.png" alt="add"></button>
+            <div class="form-popup" id="add-item-form">
+                <form action="" class="form-container">
+                    <label for="food-name"></label>
+                    <input id="food-name" type="text" placeholder="Food name" required/>
+
+                    <label for="food-group"></label>
+                    <select name="food-group" id="food-group" required>
+                        <option value="">Food group</option>
+                        <option value="veggies">Veggies</option>
+                        <option value="dairy">Dairy</option>
+                        <option value="fruits">Fruits</option>
+                        <option value="proteins">Proteins</option>
+                        <option value="grains">Grains</option>
+                        <option value="drinks">Drinks</option>
+                    </select>
+
+                    <input type="submit" id="add-item" class="submit" value="Add Item" onclick="addItem()"/>
+                    <span class="close"></span>
+                </form>
+            </div>
+            <div id="voice"> <img src="icons/microphone.png" alt="microphone" id="microphone"></div>
+        </div>
+    </div>
+</body>
+
+</html>
