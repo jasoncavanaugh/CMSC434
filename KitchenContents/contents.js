@@ -20,12 +20,12 @@ function toggleEditItemModal() {
 }
 
 const lstIdToItemList = {
-  "expiring-lst": [],
-  "dairy-lst": [],
-  "fruits-lst": [],
-  "protein-lst": [],
-  "veggies-lst": [],
-  "grains-lst": [],
+  "expiring-lst": JSON.parse(localStorage.getItem("expiring-lst")) || [],
+  "dairy-lst": JSON.parse(localStorage.getItem("dairy-lst")) || [],
+  "fruits-lst": JSON.parse(localStorage.getItem("fruits-lst")) || [],
+  "protein-lst": JSON.parse(localStorage.getItem("protein-lst")) || [],
+  "veggies-lst": JSON.parse(localStorage.getItem("veggies-lst")) || [],
+  "grains-lst": JSON.parse(localStorage.getItem("grains-lst")) || [],
 };
 
 const newItemForm = document.getElementById("new-item-form");
@@ -102,6 +102,7 @@ const displayFoodItems = (lstId) => {
       `;
     })
     .join("");
+  localStorage.setItem(lstId, JSON.stringify(itemList));
 };
 
 // display items
