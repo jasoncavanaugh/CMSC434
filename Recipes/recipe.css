@@ -157,7 +157,7 @@ button[type="submit"]:hover {
 .recently-made-recipe-card {
   height: 100px;
   width: 100px;
-  border-radius: 2rem;
+  border-radius: 1rem;
   overflow: hidden;
 }
 .recently-made-recipe-card .image-wrapper {
