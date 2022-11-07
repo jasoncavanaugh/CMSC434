@@ -20,12 +20,15 @@
   <body>
     <div class="smartphone">
       <div class="battery-and-stuff"></div>
+
+      <header class="main-header">
+        <h1>Shopping Lists</h1>
+      </header>
+      <h3 style="margin-bottom: 0.75rem">Recently created</h3>
       <div class="content">
         <!-- <div id="profile">
           <img src="icons/user.png" alt="profile" id="profile-pic" />
         </div> -->
-        <h1><strong>Shopping Lists</strong></h1>
-        <h3>Recently created</h3>
 
         <div id="breakfast">
           <h1>🥯</h1>
@@ -42,7 +45,7 @@
         <div id="taco-time">5 days ago<br /></div>
         <div id="taco-products">4 products</div>
         <div>
-          <a href="tacolist.html">
+          <a href="./tacolist.html">
             <img src="../assets/forward.png" alt="into"
           /></a>
         </div>
@@ -55,8 +58,44 @@
         <div id="halloween-products">5 products</div>
         <div><img src="../assets/forward.png" alt="into" /></div>
 
-        <button id="create" class="create-list">Create a New List</button>
-        <div class="form-popup" id="add-list-form">
+        <button
+          id="create"
+          class="create-list"
+          onclick="toggleCreateListModal()"
+        >
+          Create a New List
+        </button>
+
+        <div class="item-modal" id="add-item-modal">
+          <div style="position: relative">
+            <i class="close-modal-btn" onclick="toggleCreateListModal()"
+              >&#120;</i
+            >
+            <form class="item-form" id="new-item-form">
+              <div class="options-wrapper">
+                <input
+                  name="list-name"
+                  class="item-form-field"
+                  id="list-name"
+                  type="text"
+                  placeholder="List name"
+                  required
+                />
+
+                <label for="list-icon"></label>
+                <input
+                  id="list-icon"
+                  class="item-form-field"
+                  type="text"
+                  placeholder="List icon ex: 🍔"
+                  required
+                />
+              </div>
+              <input class="item-btn" type="submit" value="Create List" />
+            </form>
+          </div>
+        </div>
+        <!-- <div class="form-popup" id="add-list-form">
           <form action="newlist.html" class="form-container">
             <label for="list-name"></label>
             <input
@@ -75,9 +114,9 @@
             />
 
             <button type="submit" id="add-list" class="submit">Add List</button>
-            <span class="close"></span>
+            <span class="close" onclick="toggleCreateListModal()"></span>
           </form>
-        </div>
+        </div> -->
 
         <!-- <div><img src="icons/home.png" alt="home" id="home" /></div>
         <div><img src="icons/kitchen.png" alt="kitchen" id="kitchen" /></div>
@@ -104,6 +143,6 @@
         </a>
       </nav>
     </div>
-    <script src="./shopping-lists.js" defer></script>
+    <script src="./shopping-lists.js"></script>
   </body>
 </html>
