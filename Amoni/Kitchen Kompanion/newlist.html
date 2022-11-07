@@ -8,6 +8,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
     />
+    <title>New List</title>
     <script src="list.js"></script>
   </head>
 
@@ -16,7 +17,7 @@
       <div class="content" id="list">
         <div>
           <a href="shoppinglist.html">
-            <img src="icons/backward.png" alt="goback" id="back"
+            <img src="icons/backward.png" alt="goback" onclick="alert('Under development: Data will not be saved')" id="back" 
           /></a>
         </div>
         <div id="profile">
@@ -70,7 +71,7 @@
           <img src="icons/add.png" alt="add" />
         </button>
         <div class="form-popup" id="add-item-form">
-          <form action="" class="form-container">
+          <form class="form-container">
             <label for="food-name"></label>
             <input
               id="food-name"
