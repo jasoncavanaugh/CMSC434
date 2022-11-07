@@ -38,7 +38,8 @@ newItemForm.onsubmit = (event) => {
   const expiration = getExpirationDate(
     document.getElementById("new-expiration-date").value
   );
-  addItem(name, type, expiration);
+  const location = document.getElementById("location").value;
+  addItem(name, type, expiration, location);
   newItemForm.reset();
   toggleAddItemModal();
 };
@@ -63,7 +64,9 @@ function dateDiffInDays(a, b) {
   return Math.floor((utc2 - utc1) / _MS_PER_DAY);
 }
 
-function addItem(name, type, expiration) {
+function addItem(name, type, expiration, location) {
+  console.log("Name Is: " + name);
+  console.log("Location Is: " + location);
   const now = new Date();
   const diff = dateDiffInDays(now, expiration);
   let idOfListToRerender = diff <= 3 ? "expiring-lst" : `${type}-lst`;
@@ -73,6 +76,7 @@ function addItem(name, type, expiration) {
     name,
     expiration: expiration.toISOString().substring(0, 10),
     type: type,
+    location,
   });
 
   displayFoodItems(idOfListToRerender, itemList);
@@ -97,6 +101,7 @@ const displayFoodItems = (lstId) => {
             <i class="material-icons delete-btn" onclick="deleteItem('${lstId}',${idx})">close</i>
           </div>
           <span class="expiration">Expires: ${item.expiration}</span>
+          <span class="expiration">Location: ${item.location}</span>
         </div>
       </li>
       `;
