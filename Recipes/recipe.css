@@ -81,10 +81,6 @@ body {
   color: #009578;
 }
 
-.nav__icon {
-  font-size: 18px;
-}
-
 .recipe-content-wrapper {
   flex-grow: 1;
   /* border: 1px solid red; */

@@ -82,10 +82,6 @@ body {
   color: #009578;
 }
 
-.nav__icon {
-  font-size: 18px;
-}
-
 /* CONTENTS.HTML STYLING */
 
 /* Header */
@@ -194,6 +190,7 @@ body {
   overflow-y: scroll;
   width: 85%;
   margin: auto;
+  margin-bottom: 4rem;
 }
 
 /* Food groups */
