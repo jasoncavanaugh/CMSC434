@@ -1,7 +1,82 @@
-html {
-  background-color: lightgray;
+:root {
+  --navbar-green: #009578;
+  --conference-green: #52bf90;
+  --conference-blue: #77aaff;
+  --conference-purple: #a953dd;
+  --conference-darker-green: #419873;
+  --conference-darker-blue: #5588ff;
+  --conference-darker-purple: #8734c3;
+  --dark: #333333;
+  --mid-gray: #aeaeae;
+  --light-gray: #eeeeee;
+  --text-box-background: #f8f8f8;
+  --text-box-font-color: #5a5a5a;
+  --deletion-red: #ff2222;
+}
+.nav {
+  bottom: 0;
+  height: 55px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  display: flex;
+  overflow-x: auto;
 }
 
+.nav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  min-width: 50px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: sans-serif;
+  font-size: 13px;
+  color: #444444;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.nav__link:hover {
+  background-color: #eeeeee;
+}
+
+.nav__link--active {
+  color: #009578;
+}
+
+.nav__icon {
+  font-size: 18px;
+}
+
+/* html {
+  background-color: lightgray;
+}*/
+.smartphone {
+  position: relative;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  width: 428px;
+  height: 926px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.battery-and-stuff {
+  height: 2.5rem;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  padding-top: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #c4c4c4;
+  border-radius: 10px;
+}
+
+/*
 .smartphone {
   position: relative;
   width: 428px;
@@ -38,15 +113,80 @@ html {
   background: rgb(71, 71, 71);
   border-radius: 50%;
 }
+*/
 
 .smartphone .content {
-  width: 428px;
-  height: 926px;
+  flex-grow: 1;
   background-color: white;
   overflow-y: scroll;
   font-family: "Poppins", sans-serif;
 }
+.smartphone h1 strong {
+  color: var(--navbar-green);
+}
+.smartphone h3 {
+  font-size: 18px;
+  color: #aeaeae;
+  font-weight: 400;
+  margin-left: 25px;
+  margin-top: 16px;
+}
 
+.smartphone img {
+  width: 30px;
+  height: 30px;
+  vertical-align: 60%;
+  margin-top: -110px;
+  margin-left: 375px;
+}
+
+.smartphone .content h1 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.smartphone div #breakfast {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  left: 28px;
+  top: 5px;
+  background: #f5efbb;
+  border-radius: 10px;
+}
+
+.smartphone .breakfast-description {
+  margin-left: 35px;
+  vertical-align: 160%;
+  font-size: 22px;
+}
+.smartphone div #breakfast h1 {
+  font-size: 48px;
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.smartphone div #breakfast-time {
+  vertical-align: 100%;
+  margin-left: 235px;
+  font-size: 16px;
+  margin-top: -79px;
+  color: #aeaeae;
+}
+
+.smartphone div #breakfast-products {
+  vertical-align: 100%;
+  margin-left: 120px;
+  font-size: 16px;
+  margin-top: 5px;
+  color: #aeaeae;
+}
+
+/*
 .smartphone #profile {
   background-color: #52bf90;
   width: 45px;
@@ -67,27 +207,7 @@ html {
   z-index: 100;
 }
 
-.smartphone h1 {
-  text-align: center;
-  font-weight: 700;
-  margin-top: 120px;
-}
-
-.smartphone h3 {
-  font-size: 18px;
-  color: #aeaeae;
-  font-weight: 400;
-  margin-left: 25px;
-  margin-top: 16px;
-}
-
-.smartphone img {
-  width: 30px;
-  height: 30px;
-  vertical-align: 60%;
-  margin-top: -110px;
-  margin-left: 375px;
-}
+*/
 
 .smartphone #create {
   color: #ffffff;
@@ -115,82 +235,6 @@ html {
   background-color: #8734c3;
 }
 
-.smartphone #home {
-  position: absolute;
-  width: 27px;
-  height: 27px;
-  align-items: center;
-  left: -175px;
-  bottom: 27px;
-}
-
-.smartphone #kitchen {
-  position: absolute;
-  align-items: center;
-  left: -345px;
-  bottom: 25px;
-}
-
-.smartphone #cookbook {
-  position: absolute;
-  align-items: center;
-  left: -265px;
-  bottom: 25px;
-}
-
-.smartphone #list {
-  position: absolute;
-  align-items: center;
-  left: -85px;
-  bottom: 25px;
-}
-
-.smartphone #user {
-  position: absolute;
-  align-items: center;
-  left: -5px;
-  bottom: 25px;
-}
-.smartphone div #breakfast {
-  position: relative;
-  display: inline-block;
-  width: 80px;
-  height: 80px;
-  left: 28px;
-  top: 5px;
-  background: #f5efbb;
-  border-radius: 10px;
-}
-
-.smartphone div #breakfast h1 {
-  font-size: 48px;
-  position: absolute;
-  top: -115px;
-  left: 15px;
-}
-
-.smartphone .breakfast-description {
-  margin-left: 35px;
-  vertical-align: 160%;
-  font-size: 22px;
-}
-
-.smartphone div #breakfast-time {
-  vertical-align: 100%;
-  margin-left: 235px;
-  font-size: 16px;
-  margin-top: -79px;
-  color: #aeaeae;
-}
-
-.smartphone div #breakfast-products {
-  vertical-align: 100%;
-  margin-left: 120px;
-  font-size: 16px;
-  margin-top: 5px;
-  color: #aeaeae;
-}
-
 .smartphone div #taco-night {
   position: relative;
   display: inline-block;
@@ -205,8 +249,10 @@ html {
 .smartphone div #taco-night h1 {
   font-size: 48px;
   position: absolute;
-  top: -115px;
-  left: 15px;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .smartphone .taco-description {
@@ -244,8 +290,10 @@ html {
 .smartphone div #halloween h1 {
   font-size: 48px;
   position: absolute;
-  top: -115px;
-  left: 15px;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .smartphone .halloween-description {

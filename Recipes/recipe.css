@@ -1,11 +1,54 @@
+/* Generic stuff that applies to everything */
+:root {
+  --navbar-green: #009578;
+  --conference-green: #52bf90;
+  --conference-blue: #77aaff;
+  --conference-purple: #a953dd;
+  --conference-darker-green: #419873;
+  --conference-darker-blue: #5588ff;
+  --conference-darker-purple: #8734c3;
+  --dark: #333333;
+  --mid-gray: #aeaeae;
+  --light-gray: #eeeeee;
+  --text-box-background: #f8f8f8;
+  --text-box-font-color: #5a5a5a;
+  --deletion-red: #ff2222;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
 body {
-  margin: 0 0 55px 0;
+  min-height: 100vh;
+}
+
+.phone-wrapper {
+  position: relative;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  width: 428px;
+  height: 926px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.battery-and-stuff {
+  height: 2.5rem;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  padding-top: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #c4c4c4;
+  border-radius: 10px;
 }
 
 .nav {
-  position: fixed;
   bottom: 0;
-  width: 100%;
   height: 55px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
@@ -40,4 +83,132 @@ body {
 
 .nav__icon {
   font-size: 18px;
+}
+
+.recipe-content-wrapper {
+  flex-grow: 1;
+  /* border: 1px solid red; */
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.recipes {
+  /* border: 1px solid red; */
+  text-align: center;
+  margin-bottom: 50px;
+}
+.recipes h1 {
+  color: var(--navbar-green);
+}
+.recipe-content-wrapper .search {
+  border: 1px solid var(--mid-gray);
+  border-radius: 2rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+input {
+  margin-left: 0px;
+  padding: 4px 10px;
+  border: 0;
+  font-size: 16px;
+}
+.recipe-content-wrapper button[type="submit"] {
+  text-indent: -999px;
+  overflow: hidden;
+  width: 40px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid transparent;
+  background: transparent
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+    no-repeat center;
+  cursor: pointer;
+  opacity: 0.7;
+  z-index: 1000;
+}
+
+button[type="submit"]:hover {
+  opacity: 1;
+}
+
+.recipe-content-wrapper .item-form-field {
+  border: 1px solid var(--mid-gray);
+  font-size: 1rem;
+  padding: 0.5rem 0.5rem;
+  border-radius: 2rem;
+  margin-bottom: 0.25rem;
+  background-color: var(--text-box-background);
+  color: var(--text-box-font-color);
+}
+
+.recently-created-label {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 13pt;
+  font-family: Arial, sans-serif;
+  margin-bottom: 0.75rem;
+}
+
+.images {
+  /* border: 1px solid blue; */
+  width: 100%;
+  height: 110px;
+  display: flex;
+  gap: 1rem;
+  padding: 0.25rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.recently-made-recipe-card {
+  height: 100px;
+  width: 100px;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+.recently-made-recipe-card .image-wrapper {
+  max-height: 100%;
+}
+.recently-made-recipe-card .image-wrapper img {
+  height: 200px;
+  transform: translate(-50px, -20px);
+}
+
+.recommended-label {
+  text-align: center;
+  font-weight: normal;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.recommended-section {
+  text-align: center;
+  height: 28rem;
+  display: flex;
+  overflow-x: scroll;
+  gap: 1rem;
+  padding-bottom: 0.25rem;
+}
+.recommended-section .recommended-recipe {
+  min-width: 100%;
+}
+.recommended-section .recommended-recipe .image-wrapper {
+  max-height: 85%;
+  overflow: hidden;
+  border-radius: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.recommended-section .recommended-recipe .image-wrapper .burger-image {
+  height: 500px;
+  transform: translate(-100px, -100px);
+}
+
+.recommended-section .recommended-recipe-description .time-and-serves {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+a:hover {
+  background: #fff;
+  color: #333;
 }

@@ -1,5 +1,6 @@
 /* Generic stuff that applies to everything */
 :root {
+  --navbar-green: #009578;
   --conference-green: #52bf90;
   --conference-blue: #77aaff;
   --conference-purple: #a953dd;
@@ -93,6 +94,7 @@ body {
   align-items: center;
 }
 .main-header h1 {
+  color: var(--navbar-green);
   font-size: 2rem;
   font-weight: 700;
   flex-grow: 1;

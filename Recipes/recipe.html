@@ -1,40 +1,134 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styleRecipe.css" />
+    <link rel="stylesheet" href="./recipe.css" />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
   </head>
-  <body bgcolor="white">
-    <nav class="nav">
-      <a href="homePage.html" class="nav__link">
-        <i class="material-icons nav__icon">dashboard</i>
-        <span class="nav__text">Home Page</span>
-      </a>
-      <a href="#" class="nav__link nav__link--active">
-        <i class="material-icons nav__icon">kitchen</i>
-        <span class="nav__text">Kitchen Contents</span>
-      </a>
-      <a href="#" class="nav__link">
-        <i class="material-icons nav__icon">menu_book</i>
-        <span class="nav__text">Recipes</span>
-      </a>
-      <a href="#" class="nav__link">
-        <i class="material-icons nav__icon">shopping_bag</i>
-        <span class="nav__text">Shopping List</span>
-      </a>
-    </nav>
-    <header>
-      <div class="welcome-text">
-        <h1>Kitchen Kompanion</h1>
-        <div class="links">
-          <a href="#">Your Kitchen</a>
-          <a href="#"> List</a>
-          <a href="#">Recipes</a>
+  <body>
+    <div class="phone-wrapper">
+      <div class="battery-and-stuff"></div>
+      <header class="recipe-content-wrapper">
+        <div class="recipes">
+          <h1>Recipes</h1>
         </div>
-      </div>
-    </header>
+        <!-- <button type="submit">Search</button> -->
+        <div class="recently-created-label">
+          <p>Recently Created:</p>
+        </div>
+        <div class="images">
+          <div class="recently-made-recipe-card"/>
+            <div class="image-wrapper">
+              <a href="Egg-Noodle.html"><img src="https://www.forkknifeswoon.com/wp-content/uploads/2014/10/simple-homemade-chicken-ramen-fork-knife-swoon-01.jpg"/></a>
+            </div>
+          </div>
+          <div class="recently-made-recipe-card"/>
+            <div class="image-wrapper">
+              <a href="Egg-Noodle.html"><img src="https://ca-times.brightspotcdn.com/dims4/default/83ac234/2147483647/strip/true/crop/3000x2000+0+0/resize/1200x800!/quality/80/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fd4%2F01%2F63c0ea6947cbb7a0fc6933efde0d%2Ffo-quick-bites-20220906-13.jpg"/></a>
+            </div>
+          </div>
+          <div class="recently-made-recipe-card"/>
+            <div class="image-wrapper">
+              <a href="Egg-Noodle.html"><img src="https://www.chuckecheese.com/wp-content/uploads/2022/04/CEC-22-0063-Website-Menu-Page-Update_stuffed-crust.jpg"/></a>
+            </div>
+          </div>
+          <!-- <img
+            src="https://media-cldnry.s-nbcnews.com/image/upload/newscms/2019_21/2870431/190524-classic-american-cheeseburger-ew-207p.jpg"
+            class="images"
+          />
+          <img
+            src="https://www.inspiredtaste.net/wp-content/uploads/2019/03/Spaghetti-with-Meat-Sauce-Recipe-1-1200.jpg"
+            class="images"
+          />
+          <img
+            src="https://popmenucloud.com/cdn-cgi/image/width=1920,height=1920,format=auto,fit=scale-down/vjtiakdp/0fd01b56-c87d-4489-8e38-71222d91a18c"
+            class="images"
+          /> -->
+        </div>
+        <!-- <input
+          type="text"
+          name="text"
+          class="search"
+          placeholder="Search for recipes..."
+        /> -->
+        <select
+          name="dietary-restrictions-dropdown"
+          class="item-form-field"
+        >
+          <option value="dairy">None</option>
+          <option value="dairy">Vegan</option>
+          <option value="fruits">Kosher</option>
+          <option value="grains">Vegetarian</option>
+          <option value="protein">Gluten-free</option>
+          <option value="veggies">Pesketarian</option>
+        </select>
+        <h4 class="recommended-label">Recommended based on what's in your kitchen:</h4>
+        <div class="recommended-section">
+          <div class="recommended-recipe"> 
+            <div class="image-wrapper">
+              <a href="Egg-Noodle.html"><img src="https://www.forkknifeswoon.com/wp-content/uploads/2014/10/simple-homemade-chicken-ramen-fork-knife-swoon-01.jpg"/></a>
+            </div>
+            <div class="recommended-recipe-description">
+              <h3 class="name">Tonkatsu Ramen</h3>
+              <div class="time-and-serves">
+                <p>30 minutes</p>
+                <p>Serves 1</p>
+              </div>
+            </div>
+          </div>
+          <div class="recommended-recipe"> 
+            <div class="image-wrapper">
+              <a href="Egg-Noodle.html"><img class="burger-image" src="https://ca-times.brightspotcdn.com/dims4/default/83ac234/2147483647/strip/true/crop/3000x2000+0+0/resize/1200x800!/quality/80/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fd4%2F01%2F63c0ea6947cbb7a0fc6933efde0d%2Ffo-quick-bites-20220906-13.jpg"/></a>
+            </div>
+            <div class="recommended-recipe-description">
+              <h3 class="name">Gourmet Beef Burger</h3>
+              <div class="time-and-serves">
+                <p>1 hour</p>
+                <p>Serves 1</p>
+              </div>
+            </div>
+          </div>
+          <div class="recommended-recipe"> 
+            <div class="image-wrapper">
+              <a href="Egg-Noodle.html"><img style="height: 600px" class="burger-image" src="https://www.acouplecooks.com/wp-content/uploads/2019/05/Chopped-Salad-008.jpg"/></a>
+            </div>
+            <div class="recommended-recipe-description">
+              <h3 class="name">Caesar Salad</h3>
+              <div class="time-and-serves">
+                <p>15 minutes</p>
+                <p>Serves 1</p>
+              </div>
+            </div>
+          </div>
+          <!-- <a href="Egg-Noodle.html"
+            ><img
+              src="https://www.forkknifeswoon.com/wp-content/uploads/2014/10/simple-homemade-chicken-ramen-fork-knife-swoon-01.jpg"
+          /></a>
+          <p>Egg-Noodle Ramen</p>
+          <p>3 extra ingredients</p>
+          <p>30 min</p> -->
+        </div>
+      </header>
+      <nav class="nav">
+        <a href="../Home/home.html" class="nav__link nav__link">
+          <i class="material-icons nav__icon">dashboard</i>
+          <span class="nav__text">Home Page</span>
+        </a>
+        <a href="../KitchenContents/contents.html" class="nav__link nav__link">
+          <i class="material-icons nav__icon">kitchen</i>
+          <span class="nav__text">Your Kitchen</span>
+        </a>
+        <a href="" class="nav__link nav__link--active">
+          <i class="material-icons nav__icon">menu_book</i>
+          <span class="nav__text">Recipes</span>
+        </a>
+        <a href="../ShoppingLists/shopping-lists.html" class="nav__link ">
+          <i class="material-icons nav__icon">shopping_bag</i>
+          <span class="nav__text">Shopping List</span>
+        </a>
+      </nav>
+    </div>
   </body>
 </html>
