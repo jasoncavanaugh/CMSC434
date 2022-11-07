@@ -66,7 +66,7 @@ function dateDiffInDays(a, b) {
 function addItem(name, type, expiration) {
   const now = new Date();
   const diff = dateDiffInDays(now, expiration);
-  let idOfListToRerender = diff <= 1 ? "expiring-lst" : `${type}-lst`;
+  let idOfListToRerender = diff <= 3 ? "expiring-lst" : `${type}-lst`;
 
   const itemList = lstIdToItemList[idOfListToRerender];
   itemList.push({

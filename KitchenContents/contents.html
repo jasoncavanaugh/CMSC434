@@ -20,13 +20,14 @@
           <i class="close-modal-btn" onclick="toggleEditItemModal()">&#120;</i>
           <form class="item-form" id="edit-item-form">
             <div class="options-wrapper">
+              <label>Edit item name</label>
               <input
                 name="item-name"
                 type="text"
                 id="edit-item-name"
                 class="item-form-field"
-                placeholder="What's in your kitchen?"
-              />
+                placeholder="Chicken"
+              /><br>
               <div class="food-group-dropdown-wrapper">
                 <label for="food-groups-dropdown">Choose a food group</label>
                 <select
@@ -40,7 +41,9 @@
                   <option value="protein">Protein</option>
                   <option value="veggies">Veggies</option>
                 </select>
-              </div>
+              </div><br>
+
+              <label>Expiration date</label>
               <input
                 name="expiration-date"
                 type="date"
@@ -81,7 +84,7 @@
                 </select>
               </div><br>
               
-              <label>Expiration Date</label>
+              <label>Expiration date</label>
               <input
                 name="expiration-date"
                 type="date"
@@ -93,6 +96,7 @@
           </form>
         </div>
       </div>
+>
       <!-- Title -->
       <header class="main-header">
         <!-- <img class="back" src="../assets/left.png" alt="back" /> -->

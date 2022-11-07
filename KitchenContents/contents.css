@@ -269,7 +269,7 @@ body {
   background-color: var(--conference-purple);
   position: absolute;
   bottom: 6rem;
-  right: 1rem;
+  right: rem;
 }
 .new-item-btn:hover {
   cursor: pointer;
