@@ -13,14 +13,11 @@
   --text-box-font-color: #5a5a5a;
   --deletion-red: #ff2222;
 }
+
 * {
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-}
-
-body {
-  min-height: 100vh;
 }
 .nav {
   bottom: 0;
@@ -55,10 +52,6 @@ body {
 .nav__link--active {
   color: var(--navbar-green);
 }
-
-/* html {
-  background-color: lightgray;
-}*/
 .smartphone {
   position: relative;
   border: 1px solid black;
@@ -82,17 +75,6 @@ body {
 }
 
 /*
-.smartphone {
-  position: relative;
-  width: 428px;
-  height: 926px;
-  margin: auto;
-  border: 20px black solid;
-  border-top-width: 70px;
-  border-bottom-width: 70px;
-  border-radius: 36px;
-}
-
 .smartphone:before {
   content: "";
   display: block;
@@ -119,6 +101,7 @@ body {
   border-radius: 50%;
 }
 */
+
 /* Header */
 .main-header {
   display: flex;
@@ -133,85 +116,32 @@ body {
   display: flex;
   justify-content: center;
 }
-
-.smartphone .content {
+.smartphone .main-contents {
   flex-grow: 1;
   background-color: white;
+  overflow: scroll;
+}
+
+/* .smartphone .box {
+  border: none;
   overflow-y: scroll;
-  font-family: "Poppins", sans-serif;
-}
-.smartphone h1 strong {
-  color: var(--navbar-green);
-}
-.smartphone h3 {
-  font-size: 18px;
-  color: #aeaeae;
-  font-weight: 400;
-  margin-left: 25px;
-  margin-top: 16px;
-}
+  height: 830px;
+} */
 
-.smartphone img {
-  width: 30px;
-  height: 30px;
-  vertical-align: 60%;
-  margin-top: -110px;
-  margin-left: 375px;
-}
-
-.smartphone .content h1 {
-  text-align: center;
-  font-weight: 700;
-  margin-bottom: 2rem;
-}
-
-.smartphone div #breakfast {
+/* .smartphone #back {
   position: relative;
-  display: inline-block;
-  width: 80px;
-  height: 80px;
-  left: 28px;
-  top: 5px;
-  background: #f5efbb;
-  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+  top: 175px;
 }
 
-.smartphone .breakfast-description {
-  margin-left: 35px;
-  vertical-align: 160%;
-  font-size: 22px;
-}
-.smartphone div #breakfast h1 {
-  font-size: 48px;
-  position: absolute;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.smartphone div #breakfast-time {
-  vertical-align: 100%;
-  margin-left: 235px;
-  font-size: 16px;
-  margin-top: -79px;
-  color: #aeaeae;
-}
-
-.smartphone div #breakfast-products {
-  vertical-align: 100%;
-  margin-left: 120px;
-  font-size: 16px;
-  margin-top: 5px;
-  color: #aeaeae;
-}
-
-/*
 .smartphone #profile {
   background-color: #52bf90;
   width: 45px;
   height: 45px;
   left: 378px;
-  top: 70px;
+  top: 25px;
   position: relative;
   border-radius: 5px;
   margin-bottom: 0.1px;
@@ -221,119 +151,114 @@ body {
   width: 39px;
   height: 37px;
   right: 3px;
-  top: 115px;
+  top: 5px;
   position: absolute;
   z-index: 100;
 }
 
-*/
-
-.smartphone #create {
-  color: #ffffff;
-  background-color: #a953dd;
+.smartphone h1 {
   text-align: center;
+  font-weight: 700;
+  margin-top: 80px;
+}
+
+*/
+.smartphone h3 {
+  font-size: 20px;
+  color: #aeaeae;
+  font-weight: 400;
+  margin-left: 25px;
+  margin-bottom: 1rem;
+}
+
+.smartphone ul {
+  list-style: none;
+  padding-left: 30px;
+}
+
+.smartphone li {
+  list-style-type: none;
+  position: relative;
+  font-size: 22px;
+  align-items: center;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
-  font-size: 18px;
-  padding: 13px 20px;
-  gap: 10px;
+}
+
+.smartphone li::content {
+  padding-left: 400px;
+}
+
+.smartphone li::before {
+  display: inline-block;
+  position: relative;
+  width: 39px;
+  height: 41px;
+  background-color: #eeeeee;
+  content: " ";
+  border-radius: 50%;
+  font-weight: 400;
+  margin-left: 20px;
+  margin-bottom: 12px;
+  left: -10px;
+}
+
+.smartphone .close {
+  cursor: pointer;
   position: absolute;
-  width: 364px;
-  height: 59px;
-  border-radius: 10px;
+  right: 5%;
+  color: #aeaeae;
+}
+
+.smartphone .close::after {
+  content: "\d7";
+  font-size: 35px;
+}
+
+.smartphone .close:hover {
+  color: #eeeeee;
+}
+
+.smartphone li.checked {
+  color: #aeaeae;
+  text-decoration: line-through;
+}
+
+.smartphone li.checked::before {
+  background-color: #77aaff;
+}
+
+.smartphone li.checked::after {
+  content: "";
+  color: #5588ff;
+  position: absolute;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 7px;
+  left: 24px;
+  transform: rotate(46deg);
+  height: 20px;
+  width: 10px;
+}
+
+.smartphone #add-button {
+  color: #ffffff;
+  background-color: #a953dd;
+  /* position: fixed;
+  display: inline-block;
+  left: 1040px;
+  top: 905px;
+  text-align: center;*/
+  width: 85px;
+  height: 85px;
+  border-radius: 30px;
   border-style: none;
-  left: 32px;
-  top: 793px;
-  font-weight: 600;
+  cursor: pointer;
 }
 
-.smartphone #create:hover {
+.smartphone #add-button:hover {
   background-color: #8734c3;
-}
-
-.smartphone div #taco-night {
-  position: relative;
-  display: inline-block;
-  width: 80px;
-  height: 80px;
-  left: 28px;
-  top: 55px;
-  background: #f3bbf5;
-  border-radius: 10px;
-}
-
-.smartphone div #taco-night h1 {
-  font-size: 48px;
-  position: absolute;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.smartphone .taco-description {
-  margin-left: 35px;
-  font-size: 22px;
-}
-
-.smartphone div #taco-time {
-  vertical-align: 100%;
-  margin-left: 248px;
-  font-size: 16px;
-  margin-top: -28px;
-  color: #aeaeae;
-}
-
-.smartphone div #taco-products {
-  vertical-align: 100%;
-  margin-left: 120px;
-  font-size: 16px;
-  margin-top: 5px;
-  color: #aeaeae;
-}
-
-.smartphone div #halloween {
-  position: relative;
-  display: inline-block;
-  width: 80px;
-  height: 80px;
-  left: 28px;
-  top: 55px;
-  background: #f5bbc8;
-  border-radius: 10px;
-}
-
-.smartphone div #halloween h1 {
-  font-size: 48px;
-  position: absolute;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.smartphone .halloween-description {
-  margin-left: 35px;
-  font-size: 22px;
-}
-
-.smartphone div #halloween-time {
-  vertical-align: 100%;
-  margin-left: 248px;
-  font-size: 16px;
-  margin-top: -28px;
-  color: #aeaeae;
-}
-
-.smartphone div #halloween-products {
-  vertical-align: 100%;
-  margin-left: 120px;
-  font-size: 16px;
-  margin-top: 5px;
-  color: #aeaeae;
 }
 
 /* .smartphone .form-popup {
@@ -362,7 +287,7 @@ body {
   border-radius: 10px;
 }
 
-.smartphone .form-container #list-name {
+.smartphone .form-container #food-name {
   left: 45px;
   top: 30px;
   font-family: "Poppins", sans-serif;
@@ -371,13 +296,20 @@ body {
   font-size: 12px;
 }
 
-.smartphone .form-container #list-icon {
-  left: 45px;
+.smartphone .form-container #food-group {
+  left: 47px;
   top: 90px;
   font-family: "Poppins", sans-serif;
   font-style: italic;
   font-weight: 275;
   font-size: 12px;
+  color: #5a5a5a;
+  position: absolute;
+  width: 220px;
+  height: 38.74px;
+  background: #f8f8f8;
+  border: 1px solid #aeaeae;
+  border-radius: 10px;
 }
 
 .smartphone .form-container .submit {
@@ -395,22 +327,26 @@ body {
   border-radius: 10px;
   border: none;
   color: #ffffff;
-} */
-
+}
+*/
 .smartphone .form-container .submit:hover {
   background-color: #8734c3;
 }
 
-.smartphone .close::before {
-  content: "\d7";
-  font-size: 28px;
-  color: #aeaeae;
+.smartphone .form-container .close {
   position: absolute;
   left: 275px;
+  top: 2px;
+  color: #aeaeae;
   cursor: pointer;
 }
 
-.smartphone .close:hover {
+.smartphone .form-container .close::after {
+  content: "\d7";
+  font-size: 30px;
+}
+
+.smartphone .form-container .close:hover {
   color: #eeeeee;
 }
 
@@ -466,7 +402,7 @@ body {
   cursor: pointer;
   opacity: 0.3;
 }
-.item-modal .item-form {
+.item-modal .form-container {
   height: 100%;
   width: 100%;
   display: flex;
@@ -476,13 +412,13 @@ body {
   justify-content: space-between;
 }
 
-.item-modal .item-form .options-wrapper {
+.item-modal .form-container .options-wrapper {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
-.item-modal .item-form .item-form-field {
+.item-modal .form-container .item-form-field {
   border: 1px solid var(--mid-gray);
   font-size: 1rem;
   width: 15rem;
@@ -492,7 +428,7 @@ body {
   color: var(--text-box-font-color);
 }
 
-.item-modal .item-btn {
+ .item-modal .submit {
   border-radius: 0.75rem;
   padding: 0.75rem 2rem;
   font-size: 1.5rem;
@@ -500,7 +436,25 @@ body {
   background-color: var(--conference-purple);
   color: white;
 }
-.item-modal .item-btn:hover {
+.item-modal .submit:hover {
   cursor: pointer;
   filter: brightness(1.2);
+} 
+
+
+/* Terrible */
+.voice-and-add-wrapper {
+  display: grid;
+  grid-template-columns: 30% 60%;
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.voice-and-add-wrapper #voice {
+  justify-self: center;
+}
+.voice-and-add-wrapper #voice + div {
+  padding-left: 1rem;
 }

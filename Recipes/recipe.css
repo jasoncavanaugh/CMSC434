@@ -95,6 +95,8 @@ body {
 }
 .recipes h1 {
   color: var(--navbar-green);
+  font-size: 2rem;
+  fong-weight: 700;
 }
 .recipe-content-wrapper .search {
   border: 1px solid var(--mid-gray);
