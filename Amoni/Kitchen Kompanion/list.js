@@ -30,6 +30,7 @@ function clickItem() {
 }
 
 function create() {
+    alert('Under development: Create list button will not work after pressing close');
     document.getElementById("add-list-form").style.display = "block";
 }
 
