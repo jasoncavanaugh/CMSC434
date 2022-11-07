@@ -133,6 +133,8 @@ const onClickEditItem = (lstId, index) => {
   const type = item.type;
   document.getElementById("edit-food-groups-dropdown").value = type; // const expiration = getExpirationDate(
   document.getElementById("edit-expiration-date").value = item.expiration;
+  document.getElementById("edit-location").value = item.location;
+
 
   const editItemForm = document.getElementById("edit-item-form");
   editItemForm.onsubmit = (event) => {
@@ -142,11 +144,13 @@ const onClickEditItem = (lstId, index) => {
     const expiration = getExpirationDate(
       document.getElementById("edit-expiration-date").value
     );
+    const location = document.getElementById("edit-location").value;
     const newListId = `${type}-lst`;
     if (
       lstId !== newListId ||
       name !== item.name ||
-      expiration.toISOString().substring(0, 10) !== item.expiration
+      expiration.toISOString().substring(0, 10) !== item.expiration ||
+      location !== item.location
     ) {
       let switchLists = false;
       if (
@@ -161,13 +165,13 @@ const onClickEditItem = (lstId, index) => {
         switchLists = true;
         displayFoodItems(lstId);
       }
-      editItem(newListId, name, expiration, index, switchLists, type);
+      editItem(newListId, name, expiration, location, index, switchLists, type);
     }
     toggleEditItemModal();
   };
 };
 
-const editItem = (newListId, name, expiration, index, switchLists, type) => {
+const editItem = (newListId, name, expiration, location, index, switchLists, type) => {
   const now = new Date();
   const diff = dateDiffInDays(now, expiration);
   let idOfListToRerender = diff <= 1 ? "expiring-lst" : newListId;
@@ -176,12 +180,14 @@ const editItem = (newListId, name, expiration, index, switchLists, type) => {
       name,
       expiration: expiration.toISOString().substring(0, 10),
       type: type,
+      location,
     });
   } else {
     lstIdToItemList[idOfListToRerender][index] = {
       name,
       expiration: expiration.toISOString().substring(0, 10),
       type: type,
+      location,
     };
   }
   displayFoodItems(idOfListToRerender);
