@@ -40,7 +40,7 @@ function clickItem() {
 }
 
 function toggleCreateListModal() {
-  const modal = document.getElementById("add-item-modal");
+  const modal = document.getElementById("add-list-modal");
   console.log(modal);
   if (modal.classList.contains("active")) {
     modal.classList.remove("active");

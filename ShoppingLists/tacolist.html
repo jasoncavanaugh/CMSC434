@@ -8,7 +8,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
     />
-    <script src="shopping-lists.js" defer></script>
+    <script src="tacolist.js" defer></script>
     <title>Taco Night List</title>
   </head>
 
@@ -16,31 +16,37 @@
     <div class="smartphone">
       <div class="battery-and-stuff"></div>
       <!-- Add Item form -->
-      <div class="form-popup" id="add-item-form">
-        <form action="" class="form-container">
-          <label for="food-name"></label>
-          <input id="food-name" type="text" placeholder="Food name" required />
+      <div class="item-modal" id="add-item-modal">
+        <div style="position: relative">
+          <i class="close-modal-btn" onclick="toggleAddItemModal()"
+            >&#120;</i
+          >
+          <form class="form-container">
+            <div class="options-wrapper">
+            <label for="food-name"></label>
+            <input id="food-name" class="item-form-field" type="text" placeholder="Food name" required />
 
-          <label for="food-group"></label>
-          <select name="food-group" id="food-group" required>
-            <option value="">Food group</option>
-            <option value="veggies">Veggies</option>
-            <option value="dairy">Dairy</option>
-            <option value="fruits">Fruits</option>
-            <option value="proteins">Proteins</option>
-            <option value="grains">Grains</option>
-            <option value="drinks">Drinks</option>
-          </select>
+            <label for="food-group"></label>
+            <select class="item-form-field" name="food-group" id="food-group" required>
+              <option value="">Food group</option>
+              <option value="veggies">Veggies</option>
+              <option value="dairy">Dairy</option>
+              <option value="fruits">Fruits</option>
+              <option value="proteins">Proteins</option>
+              <option value="grains">Grains</option>
+              <option value="drinks">Drinks</option>
+            </select>
 
-          <input
-            type="submit"
-            id="add-item"
-            class="submit"
-            value="Add Item"
-            onclick="addItem()"
-          />
-          <span class="close"></span>
-        </form>
+            <input
+              type="submit"
+              id="add-item"
+              class="submit"
+              value="Add Item"
+              onclick="addItem()"
+            />
+            </div>
+          </form>
+        </div>
       </div>
       <!-- Header -->
       <header class="main-header">
@@ -113,11 +119,12 @@
           />
         </div>
         <div>
-          <button class="add" id="add-button" onclick="add()">
+          <button class="add" id="add-button" onclick="toggleAddItemModal()">
             <img src="../assets/add.png" alt="add" />
           </button>
         </div>
       </div>
     </div>
+    <script src="./tacolist.js"></script>
   </body>
 </html>
