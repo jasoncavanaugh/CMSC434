@@ -1,19 +1,25 @@
 var users = ['Darwin Ma','Jason Cavanaugh', 'Amoni Hawkins', 'Richard Bui'];
 
 function toggleAddItemModal() {
+    const keyboard = document.getElementsByClassName("keyboard-img")[0];
     const modal = document.getElementById("add-item-modal");
     if (modal.classList.contains("active")) {
       modal.classList.remove("active");
+      keyboard.classList.remove("active");
     } else {
+      keyboard.classList.add("active");
       modal.classList.add("active");
     }
   }
 
   function toggleRemoveItemModal() {
+    const keyboard = document.getElementsByClassName("keyboard-img")[0];
     const modal = document.getElementById("remove-item-modal");
     if (modal.classList.contains("active")) {
       modal.classList.remove("active");
+      keyboard.classList.remove("active");
     } else {
+      keyboard.classList.add("active");
       modal.classList.add("active");
     }
   }
@@ -33,6 +39,8 @@ function toggleAddItemModal() {
         list.appendChild(entry);
 
     }
+    newItemForm.reset();
+    toggleAddItemModal();
   };
 
   const removeItemForm = document.getElementById("remove-item-form");
@@ -74,6 +82,8 @@ function toggleAddItemModal() {
         list.appendChild(entry);
 
     }
+    removeItemForm.reset();
+    toggleAddItemModal();
   };
 
   const displayItems = () => {
