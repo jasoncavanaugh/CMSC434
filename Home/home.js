@@ -1,5 +1,4 @@
 var users = ['Darwin Ma','Jason Cavanaugh', 'Amoni Hawkins', 'Richard Bui'];
-
 function toggleAddItemModal() {
     const modal = document.getElementById("add-item-modal");
     if (modal.classList.contains("active")) {
@@ -66,7 +65,6 @@ function toggleAddItemModal() {
         users.pop();
 
     }
-    
     for (let i = 0; i < users.length; i++) {
 
         var entry = document.createElement('li');
@@ -76,11 +74,10 @@ function toggleAddItemModal() {
     }
   };
 
+
   const displayItems = () => {
     var list = document.getElementById('users_total');
-    
     for (let i = 0; i < users.length; i++) {
-
 
         var entry = document.createElement('li');
         entry.appendChild(document.createTextNode(users[i]));
