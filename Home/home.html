@@ -12,10 +12,12 @@
       <div class="battery-and-stuff"></div>
       <header class="welcome-text-wrapper">
         <div class="welcome-text">
-          <h1>Kitchen Kompanion</h1><br>
-          
-          <h3>Current users sharing the kitchen:</h3><br>
-          <ol id="users_total"></ol>
+          <h1>Kitchen Kompanion</h1>
+          <br />
+
+          <h3>Current users sharing the kitchen:</h3>
+          <br />
+          <ul class="food-items-lst" id="users_total"></ul>
         </div>
         <div class="item-modal" id="add-item-modal">
           <div style="position: relative">
@@ -28,39 +30,16 @@
                   type="text"
                   id="new-item-name"
                   class="item-form-field"
-                  placeholder="Ex. John Doe"
-                /><br>
-                
+                  placeholder="John Doe"
+                /><br />
               </div>
-  
-              <input class="item-btn" type="submit" value="Add user"/>
+              <input class="item-btn" type="submit" value="Add user" />
             </form>
           </div>
         </div>
-        <div class="item-modal" id="remove-item-modal">
-          <div style="position: relative">
-            <i class="close-modal-btn" onclick="toggleRemoveItemModal()">&#120;</i>
-            <form class="item-form" id="remove-item-form">
-              <div class="options-wrapper">
-                <label><u>Remove a user from the kitchen</u></label>
-                <input
-                  name="item-name"
-                  type="text"
-                  id="remove-item-name"
-                  class="item-form-field"
-                  placeholder="Ex. John Doe"
-                /><br>
-                
-              </div>
-  
-              <input class="item-btn" type="submit" value="Remove user"/>
-            </form>
-          </div>
-        </div>
-      <button class="new-item-btn" onclick="toggleAddItemModal()">+</button>
-      <button class="new-item-btn2" onclick="toggleRemoveItemModal()">-</button>
+        <button class="new-item-btn" onclick="toggleAddItemModal()">+</button>
       </header>
-      
+
       <nav class="nav">
         <a href="" class="nav__link nav__link--active">
           <i class="material-icons nav__icon">dashboard</i>
@@ -86,6 +65,12 @@
         alt="keyboard"
       />
     </div>
+    <script type="module">
+      import autoAnimate from "https://cdn.jsdelivr.net/npm/@formkit/auto-animate@1.0.0-beta.1/index.min.js";
+
+      const l = document.getElementById("users_total");
+      autoAnimate(l);
+    </script>
     <script src="./home.js"></script>
   </body>
 </html>
