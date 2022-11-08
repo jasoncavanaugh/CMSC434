@@ -4,7 +4,7 @@ function main() {
   deleteItem();
   clickItem();
   // document.getElementById("create").onclick = create;
-  // document.getElementById("add-list").onclick = storeValue;
+  document.getElementById("submit-list").onclick = storeValue;
   // document.getElementById("add-button").onclick = add;
   // document.getElementById("add-item").onclick = addItem;
 }
@@ -47,6 +47,13 @@ function toggleCreateListModal() {
   } else {
     modal.classList.add("active");
   }
+}
+
+function storeValue() {
+  var listName = document.getElementById("list-name").value;
+  localStorage.setItem("listValue", listName);
+  document.getElementById("list-name").value = "";
+  window.location.href="newlist.html";
 }
 
 // function createList() {

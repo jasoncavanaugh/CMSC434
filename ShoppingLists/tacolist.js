@@ -83,3 +83,7 @@ function addItem() {
         });
     }
 }
+
+function voiceInput() {
+    alert("Under development!");
+}

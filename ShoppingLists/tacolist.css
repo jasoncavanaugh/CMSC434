@@ -261,6 +261,24 @@
   background-color: #8734c3;
 }
 
+.smartphone #add-button2 {
+  color: #ffffff;
+  background-color: #a953dd;
+  position: fixed; 
+  /* display: inline-block; */
+  left: 1040px;
+  top: 815px;
+  text-align: center;
+  width: 85px;
+  height: 85px;
+  border-radius: 30px;
+  border-style: none;
+  cursor: pointer;
+}
+
+.smartphone #add-button2:hover {
+  background-color: #8734c3;
+}
 /* .smartphone .form-popup {
   display: none;
   position: fixed;
@@ -440,6 +458,16 @@
   cursor: pointer;
   filter: brightness(1.2);
 } 
+
+#microphone {
+  cursor: pointer;
+}
+
+#microphone2 {
+  cursor: pointer;
+  position: fixed;
+  top: 840px;
+}
 
 
 /* Terrible */

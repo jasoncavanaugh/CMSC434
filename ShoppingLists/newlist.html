@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="tacolist.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+    />
+    <script src="tacolist.js" defer></script>
+    <title>New List HomePage</title>
+  </head>
+
+  <body>
+    <div class="smartphone">
+      <div class="battery-and-stuff"></div>
+
+      <header class="main-header">
+        <!-- Don't hate me -->
+        <div id="heading1" style="width: 1rem"></div>
+        <a href="./shopping-lists.html">
+          <img class="back" src="../assets/left.png" alt="back" />
+        </a>
+        <div id="heading" style="width: 20rem"></div>
+      </header>
+      <div class="content" id="list">
+        <script>
+            const headValue = document.createElement("h1");
+            const node = document.createTextNode(
+              localStorage.getItem("listValue")
+            );
+            headValue.appendChild(node);
+  
+            const element = document.getElementById("heading");
+            element.appendChild(headValue);
+            var resetValue = "";
+            localStorage.setItem("listValue", resetValue);
+          </script>
+
+        <div>
+          <h3>Veggies</h3>
+          <ul id="veggies"></ul>
+        </div>
+
+        <div>
+          <h3>Dairy</h3>
+          <ul id="dairy"></ul>
+        </div>
+
+        <div>
+          <h3>Fruits</h3>
+          <ul id="fruits"></ul>
+        </div>
+
+        <div>
+          <h3>Proteins</h3>
+          <ul id="proteins"></ul>
+        </div>
+
+        <div>
+          <h3>Grains</h3>
+          <ul id="grains"></ul>
+        </div>
+
+        <div>
+          <h3>Drinks</h3>
+          <ul id="drinks"></ul>
+        </div>
+
+        <!-- Add Item form -->
+        <div class="item-modal" id="add-item-modal">
+            <div style="position: relative">
+            <i class="close-modal-btn" onclick="toggleAddItemModal()"
+            >&#120;</i
+                >
+            <form class="form-container">
+                <div class="options-wrapper">
+                <label for="food-name"></label>
+                <input id="food-name" class="item-form-field" type="text" placeholder="Food name" required />
+
+                <label for="food-group"></label>
+                <select class="item-form-field" name="food-group" id="food-group" required>
+                  <option value="">Food group</option>
+                  <option value="veggies">Veggies</option>
+                  <option value="dairy">Dairy</option>
+                  <option value="fruits">Fruits</option>
+                  <option value="proteins">Proteins</option>
+                  <option value="grains">Grains</option>
+                  <option value="drinks">Drinks</option>
+                </select>
+
+                <input
+                    type="submit"
+                    id="add-item"
+                    class="submit"
+                    value="Add Item"
+                    onclick="addItem()"
+                />
+                </div>
+            </form>
+        </div>
+      </div>
+        <div class="voice-and-add-wrapper">
+            <div id="voice">
+              <img
+                src="../assets/microphone.png"
+                onclick="voiceInput()"
+                alt="microphone"
+                id="microphone2"
+              />
+           </div>
+           <div>
+            <button class="add" id="add-button2" onclick="toggleAddItemModal()">
+              <img src="../assets/add.png" alt="add" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="tacolist.js"></script>
+  </body>
+</html>
