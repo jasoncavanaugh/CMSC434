@@ -111,14 +111,14 @@ body {
 }
 .item-modal.active {
   position: absolute;
-  top: 77%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -100%);
 
   background-color: white;
   border: 2px solid var(--mid-gray);
   border-radius: 1rem;
-  height: 35rem;
+  height: 26rem;
   width: 20rem;
   display: flex;
   justify-content: center;
@@ -141,15 +141,13 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
   align-items: center;
-  justify-content: space-between;
+  gap: 1rem;
 }
 
 .item-modal .item-form .options-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
 }
 
 .item-modal .item-form .food-group-dropdown-wrapper {
@@ -241,6 +239,9 @@ body {
 
 .food-item .right .expiration {
   font-style: italic;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 #expiring-lst .food-item {
   color: var(--deletion-red);
@@ -273,4 +274,15 @@ body {
 .new-item-btn:hover {
   cursor: pointer;
   filter: brightness(1.2);
+}
+
+/* Keyboard */
+.keyboard-img {
+  display: none;
+}
+.keyboard-img.active {
+  z-index: 1000;
+  display: block;
+  position: absolute;
+  bottom: 0;
 }

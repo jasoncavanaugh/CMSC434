@@ -1,21 +1,28 @@
 //toggle add item modal
 function toggleAddItemModal() {
   console.log("Add item modal");
+  const keyboard = document.getElementsByClassName("keyboard-img")[0];
   const modal = document.getElementById("add-item-modal");
   if (modal.classList.contains("active")) {
     modal.classList.remove("active");
+    keyboard.classList.remove("active");
   } else {
+    keyboard.classList.add("active");
     modal.classList.add("active");
   }
 }
 
 //toggle edit item modal
 function toggleEditItemModal() {
+  console.log("Edit item modal");
   const modal = document.getElementById("edit-item-modal");
+  const keyboard = document.getElementsByClassName("keyboard-img")[0];
   if (modal.classList.contains("active")) {
     modal.classList.remove("active");
+    keyboard.classList.remove("active");
   } else {
     modal.classList.add("active");
+    keyboard.classList.add("active");
   }
 }
 
@@ -35,10 +42,17 @@ newItemForm.onsubmit = (event) => {
   event.preventDefault();
   const name = document.getElementById("new-item-name").value;
   const type = document.getElementById("new-food-groups-dropdown").value;
-  const expiration = getExpirationDate(
-    document.getElementById("new-expiration-date").value
-  );
-  const location = document.getElementById("location").value;
+  const expirationStr = document.getElementById("new-expiration-date").value;
+  console.log("Here");
+  console.log(name);
+  if (name === "" || type === "" || expirationStr === "") {
+    console.log("Here");
+    alert("Please fill out name, food group, and expiration date.");
+    return;
+  }
+  const expiration = getExpirationDate(expirationStr);
+  let location = document.getElementById("location").value;
+  if (location === "") location = "None";
   addItem(name, type, expiration, location);
   newItemForm.reset();
   toggleAddItemModal();
@@ -135,7 +149,6 @@ const onClickEditItem = (lstId, index) => {
   document.getElementById("edit-expiration-date").value = item.expiration;
   document.getElementById("edit-location").value = item.location;
 
-
   const editItemForm = document.getElementById("edit-item-form");
   editItemForm.onsubmit = (event) => {
     event.preventDefault();
@@ -171,7 +184,15 @@ const onClickEditItem = (lstId, index) => {
   };
 };
 
-const editItem = (newListId, name, expiration, location, index, switchLists, type) => {
+const editItem = (
+  newListId,
+  name,
+  expiration,
+  location,
+  index,
+  switchLists,
+  type
+) => {
   const now = new Date();
   const diff = dateDiffInDays(now, expiration);
   let idOfListToRerender = diff <= 1 ? "expiring-lst" : newListId;
