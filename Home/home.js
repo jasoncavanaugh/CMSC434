@@ -29,10 +29,6 @@ const newItemForm = document.getElementById("new-item-form");
 newItemForm.onsubmit = (event) => {
   event.preventDefault();
   const name = document.getElementById("new-item-name").value;
-  if (name === "") {
-    alert("Please enter a name.");
-    return;
-  }
   users.push(name);
   localStorage.setItem("users", JSON.stringify(users));
   newItemForm.reset();

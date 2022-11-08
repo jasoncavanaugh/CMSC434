@@ -43,13 +43,6 @@ newItemForm.onsubmit = (event) => {
   const name = document.getElementById("new-item-name").value;
   const type = document.getElementById("new-food-groups-dropdown").value;
   const expirationStr = document.getElementById("new-expiration-date").value;
-  console.log("Here");
-  console.log(name);
-  if (name === "" || type === "" || expirationStr === "") {
-    console.log("Here");
-    alert("Please fill out name, food group, and expiration date.");
-    return;
-  }
   const expiration = getExpirationDate(expirationStr);
   let location = document.getElementById("location").value;
   if (location === "") location = "None";
