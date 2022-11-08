@@ -15,27 +15,50 @@
           <h1>Kitchen Kompanion</h1>
           
           <h3>Current users sharing the kitchen:</h3>
-          <div class = "users">
-            <i class="material-icons nav__icon">person</i>
-            <span class="nav__text">Darwin Ma</span>
-
-          </div>
-          <div class = "users">
-            <i class="material-icons nav__icon">person</i>
-            <span class="nav__text">Richard Bui</span>
-
-          </div>
-          <div class = "users">
-            <i class="material-icons nav__icon">person</i>
-            <span class="nav__text">Amoni Hawkins</span>
-          </div>
-          <div class = "users">
-            <i class="material-icons nav__icon">person</i>
-            <span class="nav__text">Jason Cavanaugh</span>
-          </div>
-
+          <ol id="users_total"></ol>
         </div>
-
+        <div class="item-modal" id="add-item-modal">
+          <div style="position: relative">
+            <i class="close-modal-btn" onclick="toggleAddItemModal()">&#120;</i>
+            <form class="item-form" id="new-item-form">
+              <div class="options-wrapper">
+                <label><u>Add a user to the kitchen</u></label>
+                <input
+                  name="item-name"
+                  type="text"
+                  id="new-item-name"
+                  class="item-form-field"
+                  placeholder="Ex. John Doe"
+                /><br>
+                
+              </div>
+  
+              <input class="item-btn" type="submit" value="Add user"/>
+            </form>
+          </div>
+        </div>
+        <div class="item-modal" id="remove-item-modal">
+          <div style="position: relative">
+            <i class="close-modal-btn" onclick="toggleRemoveItemModal()">&#120;</i>
+            <form class="item-form" id="remove-item-form">
+              <div class="options-wrapper">
+                <label><u>Remove a user from the kitchen</u></label>
+                <input
+                  name="item-name"
+                  type="text"
+                  id="remove-item-name"
+                  class="item-form-field"
+                  placeholder="Ex. John Doe"
+                /><br>
+                
+              </div>
+  
+              <input class="item-btn" type="submit" value="Add user"/>
+            </form>
+          </div>
+        </div>
+      <button class="new-item-btn" onclick="toggleAddItemModal()">+</button>
+      <button class="new-item-btn2" onclick="toggleRemoveItemModal()">-</button>
       </header>
       
       <nav class="nav">
@@ -57,5 +80,6 @@
         </a>
       </nav>
     </div>
+    <script src="./home.js"></script>
   </body>
 </html>
