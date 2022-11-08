@@ -261,11 +261,11 @@
   background-color: #8734c3;
 }
 
-.smartphone #add-button2 {
+/* .smartphone #add-button2 {
   color: #ffffff;
   background-color: #a953dd;
   position: fixed; 
-  /* display: inline-block; */
+  /* display: inline-block; 
   left: 1040px;
   top: 815px;
   text-align: center;
@@ -278,7 +278,7 @@
 
 .smartphone #add-button2:hover {
   background-color: #8734c3;
-}
+}  */
 /* .smartphone .form-popup {
   display: none;
   position: fixed;
@@ -461,12 +461,6 @@
 
 #microphone {
   cursor: pointer;
-}
-
-#microphone2 {
-  cursor: pointer;
-  position: fixed;
-  top: 840px;
 }
 
 
